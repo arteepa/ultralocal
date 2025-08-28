@@ -1,0 +1,52 @@
+{{ define "main" }}
+{{- partial "header.html" . -}}
+
+<div class="back-link">
+  <a href="/">← Ver todos los episodios</a>
+</div>
+
+<div class="episode-single">
+  <div class="episode">
+    <h4>{{ .Params.episode }}</h4>
+    <h1>{{ .Title }}</h1>
+    <p>{{ .Params.description }}</p>
+    
+    {{ if .Params.note }}
+    <br>
+    <p>Nota: {{ .Params.note }}</p>
+    {{ end }}
+
+    <div class="host-container">
+      <p>con 
+        {{ range $index, $host := .Params.hosts }}
+          {{ if gt $index 0 }}{{ if eq $index (sub (len $.Params.hosts) 1) }} & {{ else }}, {{ end }}{{ end }}
+          {{ if index $.Params.host_links $index }}
+            <a class="host" href="{{ index $.Params.host_links $index }}">{{ $host }}</a>
+          {{ else }}
+            <span class="host">{{ $host }}</span>
+          {{ end }}
+        {{ end }}
+      </p>
+    </div>
+    
+    <div class="platform-links">
+      {{ if .Params.youtube_url }}
+      <a href="{{ .Params.youtube_url }}">
+        <img src="/pl-youtube.png" srcset="/pl-youtube.png 1x, /pl-youtube@2x.png 2x" alt="">
+      </a>
+      {{ end }}
+      {{ if .Params.spotify_url }}
+      <a href="{{ .Params.spotify_url }}">
+        <img src="/pl-spotify.png" srcset="/pl-spotify.png 1x, /pl-spotify@2x.png 2x" alt="">
+      </a>
+      {{ end }}
+    </div>
+  </div>
+  
+</div>
+
+<footer>
+  <p>Una producción de <a href="https://instagram.com/pano____rama"> <u>PANORAMA</u> </a> </p>
+</footer>
+
+{{ end }}

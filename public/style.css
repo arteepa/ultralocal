@@ -1,0 +1,197 @@
+/* CSS Color Variables */
+:root {
+  --color-accent: #FFD931;
+  --color-background: #E6441F;
+  --color-dark: #271E1A;
+  --color-text-primary: #271E1A;
+  --color-text-secondary: #675654;
+  --color-text-tertiary: #7a7a7a;
+  --color-text-light: #cacaca;
+}
+
+/* Satoshi Variable Font */
+@font-face {
+  font-family: 'Satoshi';
+  src: url('./fonts/Satoshi-Variable.woff2') format('woff2-variations'),
+       url('./fonts/Satoshi-Variable.woff') format('woff-variations');
+  font-weight: 300 900; /* Light to Black range */
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Satoshi';
+  src: url('./fonts/Satoshi-VariableItalic.woff2') format('woff2-variations'),
+       url('./fonts/Satoshi-VariableItalic.woff') format('woff-variations');
+  font-weight: 300 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+ul,p,li,h4,h1{margin-block-start:0; margin-block-end:0; margin-inline-start:0; margin-inline-end:0;padding-block-start:0; padding-block-end:0; padding-inline-start:0; padding-inline-end:0;}
+a {text-decoration: none !important;border:0px !important;outline:none !important;border-width: 0px;outline-width:0px;border-bottom: none;}
+
+body {
+  font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background-color: var(--color-background);
+  margin: 0;
+  color: var(--color-text-primary);
+}
+
+/* Desktop responsive layout */
+@media (min-width: 768px) {
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  header,
+  #episode-list,
+  .episode-single,
+  .back-link {
+    max-width: 480px;
+    width: 100%;
+  }
+}
+
+header {
+  color: var(--color-text-light);
+  padding: 16px;
+  font-size: 14px;
+}
+
+.slogan {
+  color: var(--color-accent);
+  font-weight: 800;
+  font-size: 18px;
+  letter-spacing: 0.25px;
+  line-height: 1.2;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.logo {
+  flex-shrink: 0;
+  width: 80px;
+  height: auto;
+  min-height: 100px;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.obson {
+  font-size: 12px;
+  margin-top: 12px;
+  color: var(--color-text-tertiary);
+}
+
+footer {
+  position:fixed;
+  width:100%;
+  bottom:0;
+  color: var(--color-accent);
+  background-color: var(--color-dark);
+  padding: 12px 0px;
+  text-align: center;
+  height: 24px;
+  left:0;
+  right:0;
+  font-weight: 600;
+}
+
+.footer-pano {
+  text-decoration: underline;
+  font-weight: 900;
+  letter-spacing: 0.5px;
+}
+
+a {
+  color: inherit;
+}
+
+#episode-list {
+  list-style-type: none;
+  margin-bottom: 64px;
+}
+
+.episode {
+  margin:none;
+  padding: 16px 16px 16px;
+  border-top: 1px solid var(--color-dark);
+}
+
+/* #episode-list:last-child {
+  border-bottom: none;
+} */
+
+.episode > h4, .episode-link h4 {
+  color: var(--color-dark);
+  font-weight: 900;
+}
+
+.episode > h1, .episode-link h1 {
+  color: var(--color-accent);
+  font-weight: 900;
+  font-size: 30px;
+  letter-spacing: 0.25px;
+  line-height: 1.1;
+}
+
+.episode-link > p, .episode > p {
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 1.3;
+}
+
+.host {
+  font-weight: 900;
+  font-size: 20px;
+  text-decoration: underline!important;
+}
+
+.host-container {
+  padding: 16px 0px;
+}
+
+.platform-links a  img {
+  max-width: 156px;
+  margin-block-start:0; margin-block-end:0; margin-inline-start:0; margin-inline-end:0;padding-block-start:0; padding-block-end:0; padding-inline-start:0; padding-inline-end:0;
+}
+
+.platform-links {
+  margin-top: 16px;
+}
+
+.episode-link {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  color: inherit;
+  text-decoration: none !important;
+}
+
+.episode-link:hover {
+  opacity: 0.9;
+}
+
+.episode-single {
+  margin-bottom: 64px;
+}
+
+.back-link {
+  padding: 16px;
+  text-align: left;
+  border-top: 1px solid var(--color-dark);
+
+}
+
+.back-link a {
+  color: var(--color-dark);
+  font-weight: 900;
+  font-size: 20px;
+}

@@ -1,0 +1,9 @@
+baseURL = "/"
+languageCode = "es-mx"
+title = "UltraLocal"
+
+disableKinds = ["taxonomy", "term", "RSS", "sitemap", "robotsTXT", "404"]
+
+[params]
+
+

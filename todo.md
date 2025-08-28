@@ -1,0 +1,2 @@
+- volver a poner hosts?
+- hosts entities with its own page, description, and multiple links
